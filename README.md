@@ -1,5 +1,5 @@
 #  AI Talent Suite & Resume Analyzer
-**[Live Web Application] (https://vercel.com/krishtiys-projects/ai-resume-frontend/3fkf1JSsh5FEG7xbNujvuJ96Q3y1)** | **[Frontend Code Repository] (https://github.com/Krishtiy/ai-resume-frontend.)**
+**[Live Web Application] (https://ai-resume-frontend-tau.vercel.app/)** | **[Frontend Code Repository] (https://github.com/Krishtiy/ai-resume-frontend.)**
 
 A hybrid AI platform designed to automate technical recruitment. This system moves beyond basic keyword matching by combining traditional deterministic extraction with modern dense-vector semantic mathematics and generative AI reasoning.
 
