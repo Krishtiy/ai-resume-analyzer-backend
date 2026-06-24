@@ -352,8 +352,10 @@ def get_analytics(db: Session = Depends(get_db)):
         raise HTTPException(status_code=500, detail=f"Analytics Fetch Error: {str(e)}")
 import uvicorn
 
+# --- RUN SERVER NATIVELY ---
 if __name__ == "__main__":
-    # Read the dynamic port assigned by Render, default to 8000 locally
+    import uvicorn
+    import os
+    # Render assigns a dynamic port. If running locally, default to 8000.
     port = int(os.environ.get("PORT", 8000))
-    # Run the server, listening on all available network interfaces
     uvicorn.run(app, host="0.0.0.0", port=port)
