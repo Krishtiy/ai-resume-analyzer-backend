@@ -3,7 +3,7 @@
 
 A hybrid AI platform designed to automate technical recruitment. This system moves beyond basic keyword matching by combining traditional deterministic extraction with modern dense-vector semantic mathematics and generative AI reasoning.
 
-![Demo Link](https://img.shields.io/badge/Live_Demo-Available_Here-blue?style=for-the-badge)
+
 
 ## System Architecture
 The project is split into two distinct environments:
