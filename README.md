@@ -1,11 +1,15 @@
 #  AI Talent Suite & Resume Analyzer
+**[Live Web Application] ([Insert your Vercel URL here](https://ai-resume-frontend-5iac7jge1-krishtiys-projects.vercel.app))** | **[Frontend Code Repository] ([Insert your frontend repo link here](https://github.com/Krishtiy/ai-resume-frontend.))**
 
 A hybrid AI platform designed to automate technical recruitment. This system moves beyond basic keyword matching by combining traditional deterministic extraction with modern dense-vector semantic mathematics and generative AI reasoning.
 
 ![Demo Link](https://img.shields.io/badge/Live_Demo-Available_Here-blue?style=for-the-badge)
 
 ## System Architecture
-
+The project is split into two distinct environments:
+1. **The Client (Frontend):** A lightweight, static web interface hosted on Vercel for instant load times and responsive design. 
+2. **The Engine (Backend - This Repo):** A heavy-lifting Python API containerized via Docker and deployed on Hugging Face Spaces to provide the necessary 16GB RAM for machine learning inference.
+   
 This project utilizes a dual engine NLP approach to grade candidate viability:
 
 1. **Deterministic Extraction  (NER):** Utilizes `skillNer` and `spaCy` to dynamically extract frameworks, libraries, and tools from unstructured text using context-aware Named Entity Recognition.
