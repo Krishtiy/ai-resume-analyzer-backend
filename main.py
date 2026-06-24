@@ -33,7 +33,7 @@ load_dotenv()
 client = genai.Client(api_key=os.getenv("GEMINI_API_KEY"))
 
 app = FastAPI(title="AI Resume Analyzer API")
-embedder = SentenceTransformer('all-MiniLM-L6-v2')
+#embedder = SentenceTransformer('all-MiniLM-L6-v2')
 # Command SQLAlchemy to build database tables if they do not exist
 models.Base.metadata.create_all(bind=engine)
 
@@ -53,9 +53,29 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
-nlp = spacy.load("en_core_web_sm")
-skill_extractor = SkillExtractor(nlp, SKILL_DB, PhraseMatcher)
+#nlp = spacy.load("en_core_web_sm")
+#skill_extractor = SkillExtractor(nlp, SKILL_DB, PhraseMatcher)
+# NEW: Lazy Model Loading Variables
+embedder = None
+skill_extractor = None
 
+def load_ai_engines():
+    global embedder, skill_extractor
+    
+    # Only load them if they haven't been loaded yet!
+    if embedder is None:
+        print("Booting SentenceTransformer...")
+        embedder = SentenceTransformer('all-MiniLM-L6-v2')
+        
+    if skill_extractor is None:
+        print("Booting SkillNer...")
+        import spacy
+        from skillNer.skill_extractor_class import SkillExtractor
+        from skillNer.general_params import SKILL_DB
+        from spacy.matcher import PhraseMatcher
+        
+        nlp = spacy.load("en_core_web_sm")
+        skill_extractor = SkillExtractor(nlp, SKILL_DB, PhraseMatcher)
 #SKILL_DB = {
  #   "python", "fastapi", "flask", "django", "react", "node.js", 
  #   "javascript", "typescript", "html", "css", "sql", "mongodb", 
@@ -116,6 +136,7 @@ def read_root():
 
 @app.post("/upload-resume", response_model=AnalysisResponse)
 async def upload_resume(file: UploadFile = File(...), job_description: str = Form(...), db: Session = Depends(get_db)):
+    load_ai_engines()
     if not file.filename.endswith('.pdf'):
         raise HTTPException(status_code=400, detail="Only PDF files are supported.")
     
