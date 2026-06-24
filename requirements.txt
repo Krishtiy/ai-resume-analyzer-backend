@@ -8,3 +8,4 @@ sqlalchemy
 spacy
 skillner
 python-dotenv
+ipython
