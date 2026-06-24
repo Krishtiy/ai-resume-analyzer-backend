@@ -53,7 +53,7 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
-nlp = spacy.load("en_core_web_lg")
+nlp = spacy.load("en_core_web_sm")
 skill_extractor = SkillExtractor(nlp, SKILL_DB, PhraseMatcher)
 
 #SKILL_DB = {

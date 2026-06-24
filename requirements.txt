@@ -119,3 +119,4 @@ wcwidth==0.8.1
 weasel==1.0.0
 websockets==16.0
 wrapt==2.2.1
+https://github.com/explosion/spacy-models/releases/download/en_core_web_sm-3.7.0/en_core_web_sm-3.7.0-py3-none-any.whl
