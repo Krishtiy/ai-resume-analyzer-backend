@@ -1,15 +1,15 @@
-# 🚀 AI Talent Suite & Resume Analyzer
+#  AI Talent Suite & Resume Analyzer
 
-A production-grade, hybrid AI platform designed to automate technical recruitment. This system moves beyond basic keyword matching by combining traditional deterministic extraction with modern dense-vector semantic mathematics and generative AI reasoning.
+A hybrid AI platform designed to automate technical recruitment. This system moves beyond basic keyword matching by combining traditional deterministic extraction with modern dense-vector semantic mathematics and generative AI reasoning.
 
 ![Demo Link](https://img.shields.io/badge/Live_Demo-Available_Here-blue?style=for-the-badge)
 
-## 🧠 System Architecture
+## System Architecture
 
-This project utilizes a dual-engine NLP approach to grade candidate viability:
+This project utilizes a dual engine NLP approach to grade candidate viability:
 
-1. **Deterministic Extraction (Level 4 NER):** Utilizes `skillNer` and `spaCy` to dynamically extract frameworks, libraries, and tools from unstructured text using context-aware Named Entity Recognition.
-2. **Semantic Math Engine (Level 3 Embeddings):** Replaces legacy TF-IDF with HuggingFace's `SentenceTransformers` (`all-MiniLM-L6-v2`). It maps the resume and Job Description into a 384-dimensional vector space to calculate true conceptual alignment via Cosine Similarity.
+1. **Deterministic Extraction  (NER):** Utilizes `skillNer` and `spaCy` to dynamically extract frameworks, libraries, and tools from unstructured text using context-aware Named Entity Recognition.
+2. **Semantic Math Engine (Dense Embeddings):** uses HuggingFace's `SentenceTransformers` (`all-MiniLM-L6-v2`). It maps the resume and Job Description into a 384-dimensional vector space to calculate true conceptual alignment via Cosine Similarity.
 3. **Generative Reasoning Engine:** Integrates Google's `Gemini 2.5 Flash` to act as an AI career coach, providing JSON-structured gap analysis, strength identification, and actionable career roadmaps.
 
 ## 🛠️ Tech Stack
